@@ -5,19 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chat</title>
+    <style>
+        h1{
+            font-size: 2vw;
+
+        }
+        h2{
+            font-size: 1vw;
+        }
+        h1,h2{
+            text-align: center;
+        }
+        #container{
+            width:50%;
+            margin:auto;
+            
+        }
+        #messages-box{
+            height: 70vh;
+            padding: 0 5px;
+            background-color: #eee;
+            overflow: auto;
+        }
+        textarea{
+            width:80%;
+        }
+        button{
+            float:right;
+        }
+        .sendMessage{
+            margin-top: 10px;
+        }
+        .right{
+            text-align: right;
+        }
+        @media screen and (max-width:500px) {
+            #messages-box{
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Welcome to the chat app</p>
+    <h1>Welcome to the chat app</h1>
+    <div id="container">
+        <h2>Chat-Room 6</h2>
+        <div id="messages-box">
+        </div>
+        <div class="sendMessage">
+            <textarea id="msg" rows="3" cols="1" placeholder="Type your message here"></textarea> 
+            <button id="send">Send</button>
+        </div>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-         var socket = io();
-         socket.on('connect',()=>{
-
-         });
-         socket.on('disconnect', ()=>{
-            
-         });
+    <script src="/js/index.js">
     </script>
+    
+
 </body>
 </html>
